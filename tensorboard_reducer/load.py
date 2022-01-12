@@ -109,7 +109,7 @@ def load_tb_events(
                 df = df[~df.index.duplicated(keep=keep)]
             else:
                 raise ValueError(
-                    f"unexpected value for {handle_dup_steps=}, should be one of "
+                    f"unexpected value for handle_dup_steps={handle_dup_steps}, should be one of "
                     "'first', 'last', 'mean', None."
                 )
 
@@ -143,7 +143,7 @@ def load_tb_events(
     if min_runs_per_step is not None:
         assert (
             type(min_runs_per_step) == int and min_runs_per_step > 0
-        ), f"got {min_runs_per_step=}, expected positive integer"
+        ), f"got min_runs_per_step={min_runs_per_step}, expected positive integer"
 
         for key, lst in load_dict.items():
             # join='outer' means keep the union of indices from all joined dataframes.

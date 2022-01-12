@@ -118,7 +118,7 @@ def write_csv(
         overwrite (bool): Whether to overwrite existing reduction directories.
             Defaults to False.
     """
-    assert csv_path.endswith(".csv"), f"{csv_path=} should have a .csv extension"
+    assert csv_path.endswith(".csv"), f"csv_path={csv_path} should have a .csv extension"
 
     force_rm_or_raise(csv_path, overwrite)
 

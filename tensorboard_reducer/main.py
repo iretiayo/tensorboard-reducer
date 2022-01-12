@@ -1,5 +1,10 @@
 from argparse import ArgumentParser
-from importlib.metadata import version
+import sys
+if sys.version_info < (3, 8):
+    import importlib_metadata as metadata
+    version = metadata.version
+else:
+    from importlib.metadata import version
 from typing import Dict, List, Optional, Sequence
 
 import pandas as pd
